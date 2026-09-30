@@ -19,6 +19,7 @@
   --color-gold-700: #a06d1f;
   --color-gold-600: #b6862f;
   --color-gold-500: #c99a3a;
+  --color-gold-300: #dfc07a;
   --color-gold-200: #ecd8a8;
   --color-gold-100: #f6ead0;
   --color-cream-50: #faf6ef;
@@ -1524,7 +1525,7 @@ body.lightbox-open { overflow: hidden; }
 }
 .registration-callout {
   background: var(--color-forest-900);
-  color: rgba(250, 246, 239, 0.9);
+  color: var(--color-cream-50);
   border-radius: var(--radius-md);
   padding: var(--space-md) var(--space-lg);
   box-shadow: var(--shadow-sm);
@@ -1537,19 +1538,23 @@ body.lightbox-open { overflow: hidden; }
   text-transform: uppercase;
   color: var(--color-gold-300);
 }
+/* Override global `p { color: ink-700 }` on dark panels */
 .registration-callout p {
   margin: 0 0 var(--space-sm);
+  color: var(--color-cream-50);
 }
 .registration-phone {
   margin: 0 !important;
   padding-top: var(--space-sm);
   border-top: 1px solid rgba(250, 246, 239, 0.18);
+  color: var(--color-cream-50);
 }
 .registration-phone-label {
   display: block;
   font-size: var(--fs-300);
   font-weight: 700;
   margin-bottom: 0.2em;
+  color: var(--color-cream-100);
 }
 .registration-phone-value {
   display: block;
@@ -1565,7 +1570,7 @@ a.registration-phone-value:hover {
 }
 .testimony-callout {
   background: linear-gradient(180deg, var(--color-forest-800) 0%, var(--color-forest-900) 100%);
-  color: rgba(250, 246, 239, 0.9);
+  color: var(--color-cream-50);
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
   box-shadow: var(--shadow-md);
@@ -1596,20 +1601,23 @@ a.registration-phone-value:hover {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  color: var(--color-cream-100);
 }
+/* Override global `p { color: ink-700 }` inherited onto dark testimony copy */
 .testimony-callout > p {
   margin: 0 0 var(--space-md);
   max-width: 42rem;
+  color: var(--color-cream-50);
 }
 .scripture-quote-on-dark {
-  background: rgba(250, 246, 239, 0.08);
+  background: rgba(250, 246, 239, 0.12);
   border-left-color: var(--color-gold-300);
 }
-.scripture-quote-on-dark p {
+.scripture-quote.scripture-quote-on-dark p {
   color: var(--color-white);
 }
-.scripture-quote-on-dark cite {
-  color: rgba(250, 246, 239, 0.72);
+.scripture-quote.scripture-quote-on-dark cite {
+  color: var(--color-cream-100);
 }
 
 /* Contact page photo + scripture */
