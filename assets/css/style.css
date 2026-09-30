@@ -285,10 +285,16 @@ input:focus-visible,
 }
 .brand-logo {
   display: block;
-  height: 52px;
+  height: 48px;
   width: auto;
-  max-width: min(240px, 58vw);
+  max-width: min(220px, 56vw);
   object-fit: contain;
+}
+@media (min-width: 400px) {
+  .brand-logo {
+    height: 52px;
+    max-width: min(240px, 58vw);
+  }
 }
 @media (min-width: 900px) {
   .brand-logo {
@@ -329,14 +335,28 @@ input:focus-visible,
 
 .primary-nav {
   position: fixed;
-  inset: 84px 0 0 0;
+  top: 84px;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  width: min(100vw, 100%);
+  max-width: 100vw;
   background: var(--color-cream-50);
   padding: var(--space-lg) var(--space-md);
   transform: translateX(100%);
-  transition: transform var(--transition);
+  transition: transform var(--transition), visibility var(--transition);
   overflow-y: auto;
+  overflow-x: hidden;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 40;
+  -webkit-overflow-scrolling: touch;
 }
-.primary-nav.is-open { transform: translateX(0); }
+.primary-nav.is-open {
+  transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
+}
 .primary-nav ul {
   list-style: none;
   margin: 0;
@@ -351,10 +371,16 @@ input:focus-visible,
   font-family: var(--font-display);
   font-size: var(--fs-600);
   color: var(--color-forest-900);
-  padding: var(--space-2xs) 0;
+  padding: 0.85em 0;
+  min-height: 44px;
   border-bottom: 1px solid var(--color-border);
 }
 .primary-nav .nav-cta { margin-top: var(--space-md); }
+.primary-nav .nav-cta .btn {
+  width: 100%;
+  justify-content: center;
+  min-height: 48px;
+}
 
 /* Desktop nav needs room for the brand lockup + 7 links + CTA on one
    line. Below this width we intentionally show the mobile menu instead
@@ -365,10 +391,14 @@ input:focus-visible,
   .primary-nav {
     position: static;
     inset: auto;
+    width: auto;
+    max-width: none;
     transform: none;
     background: transparent;
     padding: 0;
     overflow: visible;
+    visibility: visible;
+    pointer-events: auto;
   }
   .primary-nav ul {
     flex-direction: row;
@@ -408,6 +438,13 @@ input:focus-visible,
 }
 
 body.nav-open { overflow: hidden; }
+/* Prevent off-canvas mobile nav from expanding document scroll width */
+html {
+  overflow-x: clip;
+}
+body {
+  overflow-x: clip;
+}
 
 /* =========================================================
    Hero — warm, light, church-first (not a nature backdrop)
@@ -1841,4 +1878,125 @@ a.registration-phone-value:hover {
   margin: 0;
   padding: 0 var(--space-md) var(--space-md);
   color: var(--color-ink-700);
+}
+
+/* Mobile polish pass */
+@media (max-width: 699px) {
+  .site-header .container {
+    min-height: 72px;
+  }
+  .primary-nav {
+    top: 72px;
+  }
+
+  .btn {
+    min-height: 48px;
+    padding: 0.85em 1.25em;
+  }
+
+  .resource-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-sm);
+  }
+  .resource-item .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .homepage-event-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .homepage-event-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-sm);
+  }
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .live-lang-badges li {
+    min-height: 44px;
+    padding: 0.65em 1em;
+  }
+
+  .about-page-nav a,
+  .events-month-nav a {
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .social-links a {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Keep portrait message photos from dominating the phone screen */
+  .messages-live-photo,
+  .messages-ondemand-photo {
+    aspect-ratio: 3 / 4;
+    max-height: 70vh;
+  }
+
+  /* Featured event portrait (Christmas) should not become a tall tower */
+  .event-feature-media-portrait {
+    aspect-ratio: 4 / 5;
+    max-height: 60vh;
+  }
+  .event-detail-media-portrait {
+    aspect-ratio: 3 / 4;
+    max-height: 65vh;
+  }
+
+  .policy-doc-card .btn,
+  .policy-return .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .policy-doc-copy p {
+    overflow-wrap: anywhere;
+  }
+
+  .faith-item summary {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm);
+  }
+  .faith-item summary::after {
+    float: none;
+    flex-shrink: 0;
+  }
+
+  .contact-list a {
+    overflow-wrap: anywhere;
+  }
+
+  /* Give page CTAs: more comfortable on narrow phones */
+  .give-options .btn,
+  .card .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand-logo {
+    height: 44px;
+    max-width: min(200px, 54vw);
+  }
+  h1, .mission-statement .mission-lines {
+    font-size: clamp(1.35rem, 7vw, 1.75rem);
+  }
 }
