@@ -979,3 +979,166 @@ body.nav-open { overflow: hidden; }
 }
 .policy-return p { margin: 0; }
 .policy-return .btn { align-self: flex-start; }
+
+/* =========================================================
+   Retreat Center photo collage + lightbox
+   ========================================================= */
+.retreat-gallery-section {
+  background: var(--color-cream-50);
+}
+.retreat-collage {
+  display: grid;
+  gap: var(--space-sm);
+  grid-template-columns: 1fr;
+}
+.retreat-collage-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-cream-200);
+  cursor: zoom-in;
+  aspect-ratio: 3 / 2;
+  box-shadow: var(--shadow-sm);
+}
+.retreat-collage-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 280ms ease;
+}
+.retreat-collage-item:hover img,
+.retreat-collage-item:focus-visible img {
+  transform: scale(1.03);
+}
+.retreat-collage-item:focus-visible {
+  outline: 3px solid var(--color-gold-500);
+  outline-offset: 3px;
+}
+.retreat-collage-item[data-lightbox-index="1"] img { object-position: center 60%; }
+.retreat-collage-item[data-lightbox-index="2"] img { object-position: center 55%; }
+.retreat-collage-item[data-lightbox-index="6"] img { object-position: center 40%; }
+.retreat-collage-item[data-lightbox-index="7"] img { object-position: center 45%; }
+
+/* Tablet: two columns, hero/wide full-width */
+@media (min-width: 700px) {
+  .retreat-collage {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-md);
+  }
+  .retreat-collage-hero,
+  .retreat-collage-wide {
+    grid-column: 1 / -1;
+    aspect-ratio: 2 / 1;
+  }
+}
+
+/* Desktop: editorial mosaic */
+@media (min-width: 1024px) {
+  .retreat-collage {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-areas:
+      "hero hero hero hero fire fire"
+      "hero hero hero hero lounge lounge"
+      "dining dining rec rec kitchen kitchen"
+      "gym gym gym gym volley volley"
+      "bunk1 bunk1 bunk1 bunk2 bunk2 bunk2";
+    gap: var(--space-md);
+  }
+  .retreat-collage-hero { grid-area: hero; aspect-ratio: auto; height: 100%; min-height: 0; }
+  .retreat-collage-item:nth-child(2) { grid-area: fire; }
+  .retreat-collage-item:nth-child(3) { grid-area: lounge; }
+  .retreat-collage-item:nth-child(4) { grid-area: dining; }
+  .retreat-collage-item:nth-child(5) { grid-area: rec; }
+  .retreat-collage-item:nth-child(6) { grid-area: kitchen; }
+  .retreat-collage-wide { grid-area: gym; aspect-ratio: 16 / 9; }
+  .retreat-collage-item:nth-child(8) { grid-area: volley; }
+  .retreat-collage-item:nth-child(9) { grid-area: bunk1; }
+  .retreat-collage-item:nth-child(10) { grid-area: bunk2; }
+}
+
+.lightbox[hidden] { display: none; }
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+}
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(30, 51, 35, 0.82);
+}
+.lightbox-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(1100px, 100%);
+  max-height: calc(100vh - 2rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox-figure {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+.lightbox-figure img {
+  max-width: 100%;
+  max-height: calc(100vh - 7rem);
+  width: auto;
+  height: auto;
+  margin-inline: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  background: var(--color-cream-100);
+}
+.lightbox-figure figcaption {
+  color: rgba(250, 246, 239, 0.9);
+  margin-top: var(--space-sm);
+  font-size: var(--fs-300);
+}
+.lightbox-close,
+.lightbox-nav {
+  position: absolute;
+  border: 0;
+  background: rgba(250, 246, 239, 0.92);
+  color: var(--color-forest-900);
+  cursor: pointer;
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+}
+.lightbox-close {
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 44px;
+  height: 44px;
+  font-size: 1.75rem;
+  line-height: 1;
+  z-index: 2;
+}
+.lightbox-nav {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  font-size: 1.25rem;
+}
+.lightbox-prev { left: 0.25rem; }
+.lightbox-next { right: 0.25rem; }
+@media (max-width: 699px) {
+  .lightbox-prev { left: 0; }
+  .lightbox-next { right: 0; }
+  .lightbox-dialog { padding-inline: 2.5rem; }
+}
+body.lightbox-open { overflow: hidden; }

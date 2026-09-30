@@ -77,12 +77,74 @@
           <li class="amenity-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/></svg>Sleeps up to 45, year-round</li>
         </ul>
       </div>
-      <div class="photo-slot photo-slot-wide" role="img" aria-label="Placeholder for a photo of the retreat center property &mdash; no property photo exists on the original site">
-        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2Z"/><circle cx="12" cy="13" r="4"/></svg>
-        <span aria-hidden="true">Photo: Retreat Property</span>
+      <div class="story-photo">
+        <img
+          src="assets/img/retreat/web/retreatCenter-01.jpg"
+          alt="Retreat Center lodge exterior with covered porch and autumn trees"
+          width="1800"
+          height="1200"
+          loading="lazy"
+          decoding="async"
+        >
       </div>
     </div>
   </section>
+
+  <section class="retreat-gallery-section" aria-labelledby="retreat-gallery-heading">
+    <div class="container">
+      <div class="section-head center">
+        <div class="eyebrow-row" style="justify-content:center;"><svg class="cross-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 2v20"/><path d="M6 8h12"/></svg><p class="eyebrow">Retreat Center</p></div>
+        <h2 id="retreat-gallery-heading">A Place to Gather, Rest &amp; Renew</h2>
+        <p class="lede">A look inside the New Life Conference and Retreat Center &mdash; lodging, gathering spaces, recreation, and the grounds where guests come to be refreshed.</p>
+      </div>
+
+      <div class="retreat-collage" id="retreatCollage">
+        <button type="button" class="retreat-collage-item retreat-collage-hero" data-lightbox-index="0" aria-label="View larger: Retreat Center lodge exterior with covered porch and autumn trees">
+          <img src="assets/img/retreat/web/retreatCenter-01.jpg" alt="Retreat Center lodge exterior with covered porch and autumn trees" width="1800" height="1200" loading="lazy" decoding="async">
+        </button>
+        <button type="button" class="retreat-collage-item" data-lightbox-index="1" aria-label="View larger: Outdoor fire pit with chairs near a barn on the retreat grounds">
+          <img src="assets/img/retreat/web/retreatCenter-02.jpg" alt="Outdoor fire pit with chairs near a barn on the retreat grounds" width="1800" height="1200" loading="lazy" decoding="async">
+        </button>
+        <button type="button" class="retreat-collage-item" data-lightbox-index="2" aria-label="View larger: Lounge seating area with fireplace and autumn window view">
+          <img src="assets/img/retreat/web/retreatCenter-05.jpg" alt="Lounge seating area with fireplace and autumn window view" width="1800" height="1200" loading="lazy" decoding="async">
+        </button>
+        <button type="button" class="retreat-collage-item" data-lightbox-index="3" aria-label="View larger: Dining hall with long tables and chairs">
+          <img src="assets/img/retreat/web/retreatCenter-03.jpg" alt="Dining hall with long tables and chairs" width="1800" height="1200" loading="lazy" decoding="async">
+        </button>
+        <button type="button" class="retreat-collage-item" data-lightbox-index="4" aria-label="View larger: Recreation room with ping pong and foosball tables">
+          <img src="assets/img/retreat/web/retreatCenter-04.jpg" alt="Recreation room with ping pong and foosball tables" width="1800" height="1200" loading="lazy" decoding="async">
+        </button>
+        <button type="button" class="retreat-collage-item" data-lightbox-index="5" aria-label="View larger: Commercial kitchen with stainless steel appliances and work tables">
+          <img src="assets/img/retreat/web/retreatCenter-06.jpg" alt="Commercial kitchen with stainless steel appliances and work tables" width="1800" height="1200" loading="lazy" decoding="async">
+        </button>
+        <button type="button" class="retreat-collage-item retreat-collage-wide" data-lightbox-index="6" aria-label="View larger: Indoor gymnasium with basketball court">
+          <img src="assets/img/retreat/web/retreatCenter-07.jpg" alt="Indoor gymnasium with basketball court" width="1800" height="1200" loading="lazy" decoding="async">
+        </button>
+        <button type="button" class="retreat-collage-item" data-lightbox-index="7" aria-label="View larger: Gymnasium set up with a volleyball net">
+          <img src="assets/img/retreat/web/retreatCenter-08.jpg" alt="Gymnasium set up with a volleyball net" width="1800" height="1199" loading="lazy" decoding="async">
+        </button>
+        <button type="button" class="retreat-collage-item" data-lightbox-index="8" aria-label="View larger: Bunk bedroom with twin bunk beds and a window">
+          <img src="assets/img/retreat/web/retreatCenter-09.jpg" alt="Bunk bedroom with twin bunk beds and a window" width="1800" height="1200" loading="lazy" decoding="async">
+        </button>
+        <button type="button" class="retreat-collage-item" data-lightbox-index="9" aria-label="View larger: Bunk bedroom with green walls and twin bunk beds">
+          <img src="assets/img/retreat/web/retreatCenter-10.jpg" alt="Bunk bedroom with green walls and twin bunk beds" width="1800" height="1200" loading="lazy" decoding="async">
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="retreatLightbox" hidden>
+    <div class="lightbox-backdrop" data-lightbox-close></div>
+    <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="Retreat Center photo viewer">
+      <button type="button" class="lightbox-close" data-lightbox-close aria-label="Close photo viewer">&times;</button>
+      <button type="button" class="lightbox-nav lightbox-prev" data-lightbox-prev aria-label="Previous photo">&#10094;</button>
+      <figure class="lightbox-figure">
+        <img id="lightboxImage" src="" alt="">
+        <figcaption id="lightboxCaption"></figcaption>
+      </figure>
+      <button type="button" class="lightbox-nav lightbox-next" data-lightbox-next aria-label="Next photo">&#10095;</button>
+    </div>
+  </div>
 
   <section class="section-alt">
     <div class="container">
