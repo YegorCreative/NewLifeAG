@@ -787,6 +787,9 @@ body.nav-open { overflow: hidden; }
 .homepage-retreat-photo > img {
   object-position: center 58%;
 }
+.about-who-photo > img {
+  object-position: center 42%;
+}
 .avatar-photo {
   width: 140px;
   height: 140px;
