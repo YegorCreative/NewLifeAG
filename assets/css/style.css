@@ -1611,3 +1611,24 @@ a.registration-phone-value:hover {
 .scripture-quote-on-dark cite {
   color: rgba(250, 246, 239, 0.72);
 }
+
+/* Contact page photo + scripture */
+.contact-scripture {
+  max-width: 36rem;
+  margin: var(--space-md) 0;
+}
+.contact-intro-grid {
+  display: grid;
+  gap: var(--space-lg);
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 900px) {
+  .contact-intro-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--space-2xl);
+  }
+}
+.contact-page-photo > img {
+  object-position: center 42%;
+}
