@@ -2077,3 +2077,70 @@ body.lightbox-open .back-to-top {
 main [id] {
   scroll-margin-top: 5.75rem;
 }
+
+/* Give page */
+.give-intro-grid {
+  display: grid;
+  gap: var(--space-lg);
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 900px) {
+  .give-intro-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: var(--space-2xl);
+  }
+}
+.give-hero-photo {
+  aspect-ratio: 4 / 5;
+  max-width: 28rem;
+  width: 100%;
+  margin-inline: auto;
+}
+@media (min-width: 900px) {
+  .give-hero-photo {
+    max-width: none;
+  }
+}
+.give-hero-photo > img {
+  object-position: center 32%;
+}
+.give-missions {
+  max-width: 46rem;
+}
+.give-missions-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+}
+.give-missions-card > p {
+  margin: 0 0 var(--space-md);
+}
+.give-pillars {
+  list-style: none;
+  margin: 0 0 var(--space-lg);
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+}
+.give-pillars li {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0.45em 0.9em;
+  border-radius: 999px;
+  background: var(--color-cream-100);
+  border: 1px solid var(--color-border);
+  color: var(--color-forest-800);
+  font-size: var(--fs-300);
+  font-weight: 700;
+}
+@media (max-width: 699px) {
+  .give-hero-photo {
+    aspect-ratio: 3 / 4;
+    max-height: 70vh;
+  }
+}
