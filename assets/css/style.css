@@ -679,7 +679,7 @@ body.nav-open { overflow: hidden; }
    ========================================================= */
 .site-footer {
   background: var(--color-forest-900);
-  color: rgba(250, 246, 239, 0.78);
+  color: var(--color-cream-50);
   padding-block: var(--space-2xl) var(--space-lg);
 }
 .footer-grid {
@@ -687,7 +687,7 @@ body.nav-open { overflow: hidden; }
   gap: var(--space-lg);
   grid-template-columns: 1fr;
   padding-bottom: var(--space-lg);
-  border-bottom: 1px solid rgba(250, 246, 239, 0.14);
+  border-bottom: 1px solid rgba(250, 246, 239, 0.28);
 }
 @media (min-width: 700px) {
   .footer-grid { grid-template-columns: 1.3fr 1fr 1fr; }
@@ -698,6 +698,11 @@ body.nav-open { overflow: hidden; }
   height: 56px;
   max-width: 260px;
   border-radius: var(--radius-sm);
+  /* Lighten dark green wordmark for dark footer without redesigning the logo */
+  filter: brightness(0) invert(1);
+}
+.site-footer p {
+  color: var(--color-cream-50);
 }
 .footer-col h3 {
   color: var(--color-white);
@@ -708,15 +713,43 @@ body.nav-open { overflow: hidden; }
   margin-bottom: var(--space-sm);
 }
 .footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2xs); }
-.footer-col a { text-decoration: none; }
-.footer-col a:hover { text-decoration: underline; }
+.footer-col li { color: var(--color-cream-100); }
+.footer-col a {
+  text-decoration: none;
+  color: var(--color-cream-50);
+}
+.footer-col a:hover,
+.footer-col a:focus-visible {
+  text-decoration: underline;
+  color: var(--color-gold-300);
+}
 .footer-bottom {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: baseline;
   gap: var(--space-sm);
   padding-top: var(--space-lg);
   font-size: var(--fs-300);
+  color: var(--color-cream-100);
+}
+.footer-bottom p {
+  margin: 0;
+  color: var(--color-cream-100);
+}
+.footer-credit {
+  margin: 0;
+  color: var(--color-cream-100);
+}
+.footer-credit a {
+  color: var(--color-cream-50);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+.footer-credit a:hover,
+.footer-credit a:focus-visible {
+  color: var(--color-gold-300);
 }
 .social-links { display: flex; gap: var(--space-sm); }
 .social-links a {
@@ -724,7 +757,14 @@ body.nav-open { overflow: hidden; }
   width: 38px; height: 38px;
   align-items: center; justify-content: center;
   border-radius: 50%;
-  border: 1px solid rgba(250, 246, 239, 0.25);
+  border: 1.5px solid rgba(250, 246, 239, 0.65);
+  color: var(--color-cream-50);
+}
+.social-links a:hover,
+.social-links a:focus-visible {
+  border-color: var(--color-gold-300);
+  color: var(--color-gold-300);
+  outline: none;
 }
 .social-links svg { width: 18px; height: 18px; }
 
@@ -1694,4 +1734,111 @@ a.registration-phone-value:hover {
 }
 .live-stream-card .btn {
   align-self: flex-start;
+}
+
+/* Messages page photography */
+.messages-live-grid,
+.messages-ondemand-grid {
+  display: grid;
+  gap: var(--space-lg);
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 900px) {
+  .messages-live-grid,
+  .messages-ondemand-grid {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: var(--space-2xl);
+  }
+  .messages-ondemand-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+.messages-live-photo,
+.messages-ondemand-photo {
+  aspect-ratio: 4 / 5;
+  max-width: 28rem;
+  margin-inline: auto;
+  width: 100%;
+}
+@media (min-width: 900px) {
+  .messages-live-photo,
+  .messages-ondemand-photo {
+    max-width: none;
+  }
+}
+.messages-live-photo > img {
+  object-position: center 28%;
+}
+.messages-ondemand-photo > img {
+  object-position: center 35%;
+}
+
+/* About page section nav + Statement of Faith accordion */
+.about-page-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+  margin-top: var(--space-lg);
+}
+.about-page-nav a {
+  display: inline-flex;
+  padding: 0.45em 0.85em;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-white);
+  color: var(--color-forest-800);
+  text-decoration: none;
+  font-size: var(--fs-300);
+  font-weight: 700;
+}
+.about-page-nav a:hover,
+.about-page-nav a:focus-visible {
+  background: var(--color-gold-100);
+  border-color: var(--color-gold-200);
+}
+#who-we-are,
+#leadership,
+#beliefs,
+#retreat,
+#mission {
+  scroll-margin-top: 6rem;
+}
+.faith-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  margin-top: var(--space-lg);
+}
+.faith-item {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0;
+  box-shadow: var(--shadow-sm);
+}
+.faith-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: var(--space-md);
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-forest-900);
+}
+.faith-item summary::-webkit-details-marker { display: none; }
+.faith-item summary::after {
+  content: "+";
+  float: right;
+  color: var(--color-gold-600);
+  font-weight: 700;
+}
+.faith-item[open] summary::after { content: "–"; }
+.faith-item summary:focus-visible {
+  outline: 3px solid var(--color-gold-500);
+  outline-offset: 2px;
+}
+.faith-item p {
+  margin: 0;
+  padding: 0 var(--space-md) var(--space-md);
+  color: var(--color-ink-700);
 }

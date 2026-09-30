@@ -15,7 +15,7 @@
 <meta property="og:image" content="assets/img/church-building-exterior.jpg">
 <meta name="twitter:card" content="summary">
 
-<link rel="icon" href="assets/img/logo/logo.ico" sizes="any">
+<link rel="icon" href="assets/img/logo/logo.ico?v=2" type="image/x-icon" sizes="any">
 <meta name="theme-color" content="#b6862f">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,7 +41,6 @@
     <nav class="primary-nav" id="primaryNav" aria-label="Primary">
       <ul>
         <li><a href="about.html">About</a></li>
-        <li><a href="beliefs.html">Beliefs</a></li>
         <li><a href="retreat-center.html">Retreat Center</a></li>
         <li><a href="events.html">Events</a></li>
         <li><a href="messages.html" aria-current="page">Messages</a></li>
@@ -64,45 +63,69 @@
   </section>
 
   <section>
-    <div class="container" style="max-width: 42rem;">
-      <div class="eyebrow-row"><svg class="cross-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 2v20"/><path d="M6 8h12"/></svg><p class="eyebrow">Live</p></div>
-      <h2>Live Stream</h2>
-
-      <div class="live-stream-card">
-        <div class="live-stream-copy">
-          <h3>Worship With Us Live</h3>
-          <p>Watch and listen wherever you are. Join us for our live worship service. Live translation is available in Spanish and Chinese so more people can hear the message and worship with us.</p>
-          <p class="live-translation-label">Live Translation Available</p>
-          <ul class="live-lang-badges" aria-label="Available live languages">
-            <li>English</li>
-            <li>Espa&ntilde;ol</li>
-            <li>&#20013;&#25991;</li>
-          </ul>
-          <p class="live-translation-note">During the live stream, look for the on-screen button (or the QR code shown at church) to access Spanish or Chinese translation.</p>
+    <div class="container messages-live-grid">
+      <div class="story-photo messages-live-photo">
+        <img
+          src="assets/img/onlineChurch2.jpg"
+          alt="Congregation worshiping with hands raised in the New Life sanctuary"
+          width="4000"
+          height="6000"
+          loading="eager"
+          decoding="async"
+        >
+      </div>
+      <div>
+        <div class="eyebrow-row"><svg class="cross-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 2v20"/><path d="M6 8h12"/></svg><p class="eyebrow">Live</p></div>
+        <h2>Live Stream</h2>
+        <div class="live-stream-card">
+          <div class="live-stream-copy">
+            <h3>Worship With Us Live</h3>
+            <p>Watch and listen wherever you are. Join us for our live worship service. Live translation is available in Spanish and Chinese so more people can hear the message and worship with us.</p>
+            <p class="live-translation-label">Live Translation Available</p>
+            <ul class="live-lang-badges" aria-label="Available live languages">
+              <li>English</li>
+              <li>Espa&ntilde;ol</li>
+              <li>&#20013;&#25991;</li>
+            </ul>
+            <p class="live-translation-note">During the live stream, look for the on-screen button (or the QR code shown at church) to access Spanish or Chinese translation.</p>
+          </div>
+          <a class="btn btn-primary" href="https://app.sermonlive.com/stream/ruth-gnx" target="_blank" rel="noopener noreferrer">Watch Live</a>
         </div>
-        <a class="btn btn-primary" href="https://app.sermonlive.com/stream/ruth-gnx" target="_blank" rel="noopener noreferrer">Watch Live</a>
       </div>
     </div>
   </section>
 
   <section class="section-alt">
-    <div class="container" style="max-width: 40rem;">
-      <div class="eyebrow-row"><svg class="cross-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 2v20"/><path d="M6 8h12"/></svg><p class="eyebrow">On Demand</p></div>
-      <h2>Watch Anytime</h2>
-      <ul class="resource-list">
-        <li class="resource-item">
-          <div><h3>YouTube</h3><p>Channel: NewLifeLyons</p></div>
-          <a class="btn btn-outline-dark" href="https://www.youtube.com/channel/UCfI6z831PPhK5JsShmRE4Fg" target="_blank" rel="noopener noreferrer">Subscribe</a>
-        </li>
-        <li class="resource-item">
-          <div><h3>Rumble</h3><p>Channel: NewLifeLyonsChurch</p></div>
-          <a class="btn btn-outline-dark" href="https://rumble.com/user/NewLifeLyonsChurch?e9s=src_v1_cmd%2Csrc_v1_s%2Csrc_v1_s_o%2Csrc_v1_rso&amp;sci=faa9a0f3-9a01-4ce9-884f-7fcd74502d51" target="_blank" rel="noopener noreferrer">Visit Rumble</a>
-        </li>
-        <li class="resource-item">
-          <div><h3>Facebook</h3><p>Live video and updates</p></div>
-          <a class="btn btn-outline-dark" href="https://www.facebook.com/pages/New-Life-Assembly-of-God-Lyons/845455338828085" target="_blank" rel="noopener noreferrer">Visit Facebook</a>
-        </li>
-      </ul>
+    <div class="container messages-ondemand-grid">
+      <div>
+        <div class="eyebrow-row"><svg class="cross-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 2v20"/><path d="M6 8h12"/></svg><p class="eyebrow">On Demand</p></div>
+        <h2>Watch Anytime</h2>
+        <p class="lede">Catch up on messages and stay connected with New Life through our verified online channels.</p>
+        <ul class="resource-list">
+          <li class="resource-item">
+            <div><h3>YouTube</h3><p>Channel: NewLifeLyons</p></div>
+            <a class="btn btn-outline-dark" href="https://www.youtube.com/channel/UCfI6z831PPhK5JsShmRE4Fg" target="_blank" rel="noopener noreferrer">Subscribe</a>
+          </li>
+          <li class="resource-item">
+            <div><h3>Rumble</h3><p>Channel: NewLifeLyonsChurch</p></div>
+            <a class="btn btn-outline-dark" href="https://rumble.com/user/NewLifeLyonsChurch?e9s=src_v1_cmd%2Csrc_v1_s%2Csrc_v1_s_o%2Csrc_v1_rso&amp;sci=faa9a0f3-9a01-4ce9-884f-7fcd74502d51" target="_blank" rel="noopener noreferrer">Visit Rumble</a>
+          </li>
+          <li class="resource-item">
+            <div><h3>Facebook</h3><p>Live video and updates</p></div>
+            <a class="btn btn-outline-dark" href="https://www.facebook.com/pages/New-Life-Assembly-of-God-Lyons/845455338828085" target="_blank" rel="noopener noreferrer">Visit Facebook</a>
+          </li>
+        </ul>
+      </div>
+      <div class="story-photo messages-ondemand-photo">
+        <img
+          src="assets/img/onlineChurhc.jpg"
+          alt="New Life church family gathered outdoors under a tent among autumn trees"
+          width="4000"
+          height="6000"
+          loading="lazy"
+          decoding="async"
+        >
+      </div>
     </div>
   </section>
 
@@ -110,8 +133,8 @@
     <div class="container" style="max-width: 40rem;">
       <div class="eyebrow-row"><svg class="cross-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 2v20"/><path d="M6 8h12"/></svg><p class="eyebrow">Assemblies of God</p></div>
       <h2>Denominational News</h2>
-      <p>Read the latest news about the Assemblies of God or an inspirational story.</p>
-      <a class="btn btn-outline-dark" href="http://penews.org/" target="_blank" rel="noopener noreferrer">PE News</a>
+      <p>Stay connected with news, stories, and updates from the Assemblies of God.</p>
+      <a class="btn btn-outline-dark" href="https://news.ag.org/" target="_blank" rel="noopener noreferrer">Assemblies of God News</a>
     </div>
   </section>
 </main>
@@ -125,10 +148,10 @@
     </a>
         <p style="margin-top: var(--space-sm);">A Christ-centered church family in Lyons, New York &mdash; also home to a 49-acre retreat property.</p>
         <div class="social-links">
-          <a href="https://www.facebook.com/pages/New-Life-Assembly-of-God-Lyons/845455338828085" target="_blank" rel="noopener" aria-label="New Life Assembly of God on Facebook">
+          <a href="https://www.facebook.com/pages/New-Life-Assembly-of-God-Lyons/845455338828085" target="_blank" rel="noopener noreferrer" aria-label="New Life Assembly of God on Facebook">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3Z"/></svg>
           </a>
-          <a href="https://www.youtube.com/channel/UCfI6z831PPhK5JsShmRE4Fg" target="_blank" rel="noopener" aria-label="New Life Assembly of God on YouTube">
+          <a href="https://www.youtube.com/channel/UCfI6z831PPhK5JsShmRE4Fg" target="_blank" rel="noopener noreferrer" aria-label="New Life Assembly of God on YouTube">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M10 9.5v5l5-2.5Z" fill="currentColor" stroke="none"/></svg>
           </a>
         </div>
@@ -138,7 +161,6 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="beliefs.html">Beliefs</a></li>
           <li><a href="retreat-center.html">Retreat Center</a></li>
           <li><a href="events.html">Events</a></li>
           <li><a href="messages.html">Messages</a></li>
@@ -158,6 +180,7 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; <span id="year"></span> New Life Assembly of God &amp; Retreat Center. All rights reserved.</p>
+      <p class="footer-credit">Website by <a href="https://yegorcreative.com" target="_blank" rel="noopener noreferrer">Yegor Creative</a></p>
     </div>
   </div>
 </footer>
