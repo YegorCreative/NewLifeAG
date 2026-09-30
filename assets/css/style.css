@@ -1632,3 +1632,58 @@ a.registration-phone-value:hover {
 .contact-page-photo > img {
   object-position: center 42%;
 }
+
+/* Live stream multilingual callout */
+.live-stream-card {
+  margin-top: var(--space-md);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  align-items: flex-start;
+}
+.live-stream-copy h3 {
+  margin: 0 0 var(--space-2xs);
+}
+.live-stream-copy p {
+  margin: 0 0 var(--space-sm);
+}
+.live-translation-label {
+  margin: var(--space-sm) 0 var(--space-2xs) !important;
+  font-size: var(--fs-300);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold-800);
+}
+.live-lang-badges {
+  list-style: none;
+  margin: 0 0 var(--space-sm);
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+}
+.live-lang-badges li {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4em 0.85em;
+  border-radius: 999px;
+  background: var(--color-cream-100);
+  border: 1px solid var(--color-border);
+  color: var(--color-forest-800);
+  font-size: var(--fs-300);
+  font-weight: 700;
+}
+.live-translation-note {
+  margin: 0 !important;
+  font-size: var(--fs-300);
+  color: var(--color-ink-500);
+}
+.live-stream-card .btn {
+  align-self: flex-start;
+}
