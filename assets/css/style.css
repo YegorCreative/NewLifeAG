@@ -2000,3 +2000,80 @@ a.registration-phone-value:hover {
     font-size: clamp(1.35rem, 7vw, 1.75rem);
   }
 }
+
+/* =========================================================
+   Back to top
+   ========================================================= */
+.back-to-top {
+  position: fixed;
+  z-index: 60;
+  right: calc(1.1rem + env(safe-area-inset-right, 0px));
+  bottom: calc(1.1rem + env(safe-area-inset-bottom, 0px));
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(250, 246, 239, 0.35);
+  border-radius: 999px;
+  background: var(--color-forest-800);
+  color: var(--color-cream-50);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 200ms ease, transform 200ms ease, visibility 200ms ease, background 200ms ease, border-color 200ms ease, color 200ms ease;
+}
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.back-to-top svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+.back-to-top:hover {
+  background: var(--color-forest-700);
+  border-color: var(--color-gold-300);
+  color: var(--color-white);
+}
+.back-to-top:focus-visible {
+  outline: 3px solid var(--color-gold-500);
+  outline-offset: 3px;
+}
+.back-to-top:active {
+  transform: translateY(1px);
+}
+body.nav-open .back-to-top,
+body.lightbox-open .back-to-top {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+@media (max-width: 699px) {
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    right: calc(0.9rem + env(safe-area-inset-right, 0px));
+    bottom: calc(0.9rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top {
+    transition: none;
+    transform: none;
+  }
+  .back-to-top.is-visible {
+    transform: none;
+  }
+}
+
+/* Keep in-page anchors clear of the sticky header */
+main [id] {
+  scroll-margin-top: 5.75rem;
+}

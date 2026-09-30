@@ -92,4 +92,58 @@
     });
   }
 
+
+  /* Back to top — lightweight IntersectionObserver */
+  (function () {
+    var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    var sentinel = document.createElement("div");
+    sentinel.setAttribute("aria-hidden", "true");
+    sentinel.id = "backToTopSentinel";
+    sentinel.style.cssText = "position:absolute;top:0;left:0;width:1px;height:500px;pointer-events:none;opacity:0;";
+    document.body.prepend(sentinel);
+
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "back-to-top";
+    btn.setAttribute("aria-label", "Back to top");
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>';
+    document.body.appendChild(btn);
+
+    function setVisible(visible) {
+      btn.classList.toggle("is-visible", !!visible);
+    }
+
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        var entry = entries[0];
+        setVisible(entry && !entry.isIntersecting);
+      }, { root: null, threshold: 0 });
+      io.observe(sentinel);
+    } else {
+      var onScroll = function () {
+        setVisible(window.scrollY > 480);
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    }
+
+    btn.addEventListener("click", function () {
+      var preferReduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if ("scrollTo" in window) {
+        window.scrollTo({ top: 0, behavior: preferReduce ? "auto" : "smooth" });
+      } else {
+        window.scrollTo(0, 0);
+      }
+      var topTarget = document.getElementById("top") || document.body;
+      if (topTarget && typeof topTarget.focus === "function") {
+        var prev = topTarget.getAttribute("tabindex");
+        topTarget.setAttribute("tabindex", "-1");
+        topTarget.focus({ preventScroll: true });
+        if (prev === null) topTarget.removeAttribute("tabindex");
+        else topTarget.setAttribute("tabindex", prev);
+      }
+    });
+  })();
+
 })();
