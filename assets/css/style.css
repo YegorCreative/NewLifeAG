@@ -146,6 +146,45 @@ section { padding-block: var(--space-2xl); }
   color: var(--color-ink-700);
 }
 
+/* Official mission statement — both lines stay one connected unit */
+.mission-statement {
+  margin: 0 0 var(--space-md);
+}
+.mission-statement .mission-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--fs-300);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold-800);
+  margin: 0 0 var(--space-2xs);
+}
+.mission-statement .mission-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12em;
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-700);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--color-forest-900);
+}
+.mission-statement .mission-lines > span {
+  display: block;
+}
+.mission-statement-hero {
+  margin-top: var(--space-sm);
+  margin-bottom: 0;
+}
+.mission-statement-hero .mission-lines {
+  font-size: var(--fs-600);
+  font-weight: 600;
+  color: var(--color-forest-800);
+}
+
 /* --- Buttons --- */
 .btn {
   display: inline-flex;
