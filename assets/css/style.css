@@ -1557,6 +1557,11 @@ body.lightbox-open { overflow: hidden; }
   font-size: var(--fs-600);
   font-weight: 700;
   color: var(--color-white);
+  text-decoration: none;
+}
+a.registration-phone-value:hover {
+  text-decoration: underline;
+  color: var(--color-gold-300);
 }
 .testimony-callout {
   background: linear-gradient(180deg, var(--color-forest-800) 0%, var(--color-forest-900) 100%);
